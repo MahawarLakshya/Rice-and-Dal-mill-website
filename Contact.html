@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001660;
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        .company-info {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h3 {
+            color: #333;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        input,
+        textarea {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            padding: 15px;
+            outline: none;
+            font-size: 16px;
+            background-color: #f5f5f5;
+        }
+        
+        button {
+            padding: 15px;
+            background-color: #2e3267;
+            color: white;
+            font-size: 18px;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            width: 150px;
+            margin: 20px auto 0;
+            border-radius: 30px;
+        }
+        
+        .back-button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2e3267;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .back-button:hover,
+        button:hover {
+            background-color: #e0354f;
+        }
+        /* Media Query for Screens with a Minimum Width of 600px */
+        
+        @media only screen and (max-width: 600px) {
+            .company-info {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="company-info">
+            <h2>Shiv Dayal Murari Lal Rice And Dal Mill</h2>
+            <br>
+            <p>Email: sdmlmahawar@gmail.com</p>
+            <br>
+            <p>Registration Number: 09AARFS948K1ZY</p>
+            <br>
+            <p>Address: Village Rsaura, Sitapur, Uttar Pradesh, 261001, India</p>
+        </div>
+
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>Get in Touch</h3>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="email" id="email" placeholder="Enter your email-id" required>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            <textarea rows="4" id="message" placeholder="Enter your Query here" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <a href="index.html" class="back-button">
+            Back to Home
+        </a>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "contactandhelp1992@gmail.com",
+                Password: "E1EEB256123F0DAA2E0FA727D10544675BE8",
+                /*"Contacthelp@1992",*/
+                From: "contactandhelp1992@gmail.com",
+                To: document.getElementById("email").value,
+                Subject: "Contact Query",
+                Body: "Hello " + document.getElementById("name").value + "<br>Thanks for visiting us.",
+                // "<br> Email:" + document.getElementById("email").value +
+                // "<br> Phone no:" + document.getElementById("phone").value +
+                // "<br> Message:" + document.getElementById("message").value,
+            }).then(function(message) {
+                if (message === "OK") {
+                    alert("Message sent successfully");
+                } else {
+                    alert(message);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

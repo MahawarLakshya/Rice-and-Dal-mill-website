@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            min-height: 100vh;
+            width: 100%;
+            font-size: 16px;
+            background: #2e3267;
+            color: #777;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        
+        a {
+            font-style: none;
+            color: white;
+            text-decoration: none;
+            margin: 5px 0px 0px 15px;
+        }
+        
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .item-container {
+            position: relative;
+            margin: 24px;
+            width: 320px;
+            height: 560px;
+            overflow: hidden;
+            background-color: #6065b2;
+            box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+        }
+        
+        .img-container,
+        .body-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .img-container img {
+            width: 100%;
+        }
+        
+        .body-container {
+            position: relative;
+        }
+        
+        .overlay {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-color: rgba(24, 83, 122, 0.6);
+            opacity: 0;
+            transition: height linear 0.4s, opacity linear 0.2s;
+        }
+        
+        .item-container:hover .overlay {
+            opacity: 1;
+            height: 150px;
+        }
+        
+        .event-info {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+        }
+        
+        .title,
+        .price {
+            color: #18537a;
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin: 12px;
+        }
+        
+        .info {
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        
+        .separator {
+            width: 20%;
+            height: 6px;
+            background-color: #17537a;
+            margin-bottom: 16px;
+        }
+        
+        .additional-info {
+            border-top: 1px solid #bbb;
+            margin-top: 12px;
+            padding: 28px;
+            padding-bottom: 0;
+        }
+        
+        .additional-info .info {
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .info i {
+            color: #18537a;
+            font-size: 1.1em;
+            margin-right: 4px;
+        }
+        
+        .info span {
+            color: #18537a;
+            font-weight: bolder;
+        }
+        
+        .action {
+            color: #fff;
+            border: 3px solid #fff;
+            background-color: transparent;
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            outline: none;
+            cursor: pointer;
+            padding: 10px;
+            text-transform: uppercase;
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: transparent 0.4s, top 0.4s;
+        }
+        
+        .item-container:hover .action {
+            top: 50px;
+        }
+        
+        .action:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        /* Tablet Layout */
+        
+        @media only screen and (max-width: 1028px) {
+            .item-container {
+                width: 100%;
+                height: 520px;
+                margin: 24px 1.5%;
+            }
+        }
+        /* Mobile Phone Layout */
+        
+        @media screen and (max-width: 500px) {
+            .item-container {
+                width: calc(100% - 48px);
+                height: auto;
+            }
+            .img-container {
+                height: 40px;
+            }
+            .overlay {
+                height: 100px;
+            }
+            .event-info {
+                padding: 4px;
+            }
+            .title,
+            .price {
+                margin: 6px;
+            }
+            .separator {
+                margin-bottom: 8px;
+            }
+            .additional-info {
+                padding: 8px;
+            }
+            .additional-info .info {
+                margin-bottom: 12px;
+            }
+        }
+    </style>
+    <title>Certificates</title>
+</head>
+
+<body>
+
+    <section>
+
+
+
+        <a href="index.html">
+            &#xf0c9;Home  
+                </a>
+
+        <h1 style="text-align: center; margin-top: 5px; color: white;">Our Certificates</h1>
+        <div class="container">
+            <div class="item-container">
+
+                <div class="body-container">
+                    <div class="overlay"></div>
+
+                    <div class="event-info">
+                        <p class="title">FSSAI</p>
+                        <!-- <div class="separator"></div> -->
+
+
+
+                        <div class="additional-info">
+                            <!-- <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            245 W 52nd St, New York
+                        </p> -->
+
+                            <!-- <p class="info">
+                            Issue Date-<i class="far fa-calendar-alt"></i>30/04/2024
+                        </p> -->
+                            <p class="info">
+                                End Date-<i class="far fa-calendar-alt"></i>30/04/2024
+                            </p>
+                            <p class="info">
+                                Reg. no.-<i class="uil uil-clipboard"></i>12714067000056
+                            </p>
+
+
+                        </div>
+                    </div>
+                    <button class="action"><img src="fssai.jpg" alt="FSSAI" style="height: 490px; width: 19rem;"></button>
+                    <!-- <button class="action">Past Events</button> -->
+                </div>
+            </div>
+
+            <div class="item-container">
+                <div class="img-container">
+                    <!-- <img src="/img4.jpg" alt="Event image"> -->
+                </div>
+                <div class="body-container">
+                    <div class="overlay"></div>
+
+                    <div class="event-info">
+                        <p class="title" style="font-size: 23px;">UDYAM</p>
+                        <!-- <div class="separator"></div><br> -->
+                        <!-- <p class="info">New York, NY</p>
+                    <p class="price">35$</p> -->
+
+                        <div class="additional-info">
+                            <!-- <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            245 W 52nd St, New York
+                        </p> -->
+                            <p class="info">
+                                Issue Date-<i class="far fa-calendar-alt"></i>15/08/2021
+                            </p>
+                            <p class="info">
+                                Reg. no.-<i class="uil uil-clipboard"></i>UDYAM-UP-71-0002598
+                            </p>
+
+                        </div>
+                    </div>
+                    <button class="action"><img src="UDYAM.jpg" alt="FSSAI" style="height: 490px; width: 19rem;"></button>
+                    <!-- <button class="action">Past Events</button> -->
+                </div>
+            </div>
+
+            <div class="item-container">
+                <div class="img-container">
+                    <!-- <img src="/img4.jpg" alt="Event image"> -->
+                </div>
+                <div class="body-container">
+                    <div class="overlay"></div>
+
+                    <div class="event-info">
+                        <p class="title" style="font-size: 23px;">APEDA</p>
+                        <!-- <div class="separator"></div><br> -->
+                        <!-- <p class="info">New York, NY</p>
+                    <p class="price">35$</p> -->
+
+                        <div class="additional-info">
+                            <!-- <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            245 W 52nd St, New York
+                        </p> -->
+                            <p class="info">
+                                Issue Date-<i class="far fa-calendar-alt"></i>18/11/1995
+                            </p>
+                            <p class="info">
+                                Reg. no.-<i class="uil uil-clipboard"></i>169083
+                            </p>
+
+                        </div>
+                    </div>
+                    <button class="action"><img src="APEDA.jpg" alt="FSSAI" style="height: 490px; width: 19rem;"></button>
+                    <!-- <button class="action">Past Events</button> -->
+                </div>
+            </div>
+
+            <div class="item-container">
+                <div class="img-container">
+                    <!-- <img src="/img4.jpg" alt="Event image"> -->
+                </div>
+                <div class="body-container">
+                    <div class="overlay"></div>
+
+                    <div class="event-info">
+                        <p class="title" style="font-size: 23px;">GST</p>
+                        <!-- <div class="separator"></div><br> -->
+                        <!-- <p class="info">New York, NY</p>
+                    <p class="price">35$</p> -->
+
+                        <div class="additional-info">
+                            <!-- <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            245 W 52nd St, New York
+                        </p> -->
+                            <p class="info">
+                                Issue Date-<i class="far fa-calendar-alt"></i>01/07/2017
+                            </p>
+                            <p class="info">
+                                Reg. no.-<i class="uil uil-clipboard"></i>09AARFS9486K1ZY
+                            </p>
+
+                        </div>
+                    </div>
+                    <button class="action"><img src="GST.jpg" alt="FSSAI" style="height: 490px; width: 19rem;"></button>
+                    <!-- <button class="action">Past Events</button> -->
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+</body>
+
+</html>
